@@ -20,6 +20,9 @@ pcol <- colnames(read.table("household_power_consumption.txt",header=T,sep=";",n
 # add column names
 colnames(pset) <- pcol
 
+png(file="plo1.png")
+
 # plot histogram of global active power
 hist(pset$Global_active_power, main="Global Active Power",col="red",xlab="Global Active Power (kilowatts)",ylab="Frequency")
 
+dev.off()
