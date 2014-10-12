@@ -33,7 +33,7 @@ concat <- as.character(paste(pset$Date,pset$Time))
 # add datetime column to dataset
 pset$datetime <- strptime(concat,"%d/%m/%Y %H:%M:%S")
 
-png(file="plo1.png")
+png(file="plot3.png")
 
 plot(pset$datetime,pset$Sub_metering_1,type="l", col="black",ylab="Energy sub metering",xlab="")
 lines(pset$datetime, pset$Sub_metering_2, col="red")
