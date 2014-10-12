@@ -29,4 +29,8 @@ concat <- as.character(paste(pset$Date,pset$Time))
 # add datetime column to dataset
 pset$datetime <- strptime(concat,"%d/%m/%Y %H:%M:%S")
 
+png(file="plot2.png")
+
 plot(pset$datetime, pset$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+
+dev.off()
