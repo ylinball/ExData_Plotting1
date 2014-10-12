@@ -33,6 +33,8 @@ concat <- as.character(paste(pset$Date,pset$Time))
 # add datetime column to dataset
 pset$datetime <- strptime(concat,"%d/%m/%Y %H:%M:%S")
 
+png(file="plot4.png")
+
 # plot 2 x 2 
 par(mfrow=c(2,2))
 plot(pset$datetime, pset$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
@@ -45,3 +47,5 @@ lines(pset$datetime, pset$Sub_metering_3, col="blue")
 legend("topright",lty=1, bty="n",col=c("black","red","blue "),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
 plot(pset$datetime, pset$Global_reactive_power,  type="l", ylab="Global_reactive_power", xlab="datetime" )
+
+dev.off()
